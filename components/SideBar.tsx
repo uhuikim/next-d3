@@ -9,25 +9,31 @@ const sideStyle = css({
   position: 'absolute',
   left: 0,
   top: 0,
-  padding: '1rem',
+  padding: '2rem',
   background: palette.primary,
   color: palette.white,
 });
 
+const navLIist = css({
+  '& li': {
+    padding: '1rem 0',
+  },
+});
 const logo = css({
   fontSize: '1.5rem',
+  marginBottom: '2rem',
 });
-
 const Layout: React.FC = () => {
   return (
     <aside css={sideStyle}>
       <h1 css={logo}>
         <Link href="/">Next D3</Link>
       </h1>
-
-      <div>
-        <Link href="line">Line Chart</Link>
-      </div>
+      <ul css={navLIist}>
+        <li>
+          <Link href="line">Line Chart</Link>
+        </li>
+      </ul>
     </aside>
   );
 };
